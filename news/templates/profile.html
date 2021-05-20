@@ -1,0 +1,30 @@
+{% extends 'all-news/base.html' %}
+
+{% load bootstrap4 %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <!-- Empty div -->
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+       
+        
+        {% if current_user %}
+        {% for prof in profile %}
+        {{prof.username}}
+        <img src=" {{prof.profile_pic.url}} " style="height: 30vmin; border-radius: 50%;" alt="">
+        {% endfor %}
+        {% endif %}
+          
+      
+  
+      </div>
+      <!-- empty div -->
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  
+{% endblock content %}
+    

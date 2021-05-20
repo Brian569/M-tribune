@@ -1,0 +1,27 @@
+{% extends 'all-news/base.html' %}
+
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>New article</h1>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {{form.media}}
+        </div>
+        <form action="{% url 'new_article' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+
+        <input type="submit" class="btn btn-outline-primary" value="Post">
+        </form>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+  
+{% endblock content %}
+    

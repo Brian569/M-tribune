@@ -1,0 +1,28 @@
+{% extends 'all-news/base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+{{ block.super }}
+
+<div class="container">
+    {% for new in news %}
+  
+    <div class="row">
+        <div class="col-md-2"></div>
+      <!-- displaying News articles -->
+      <div class="col-xs-6 col-sm-6 col-md-8 col-lg-6">
+        <h2 class="text-center"> {{ new.title }} </h2>
+        <p class="text-center">{{new.post}} </p>
+      <!-- </div> -->
+      <div class="col-md-2"></div>
+    </div>
+  
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There No News Items</h2>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+    

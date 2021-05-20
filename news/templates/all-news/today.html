@@ -1,0 +1,41 @@
+{% extends 'all-news/base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+{{ block.super }}
+
+
+<div class="container">
+    
+    {% for new in news %}
+        
+    <div class="row">
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src=" {{new.article_image.url}} " class="img-responsiveimage is-2by1 " style="height: 30vmin;" alt="Image" alt="">
+            <h2 >
+                {{new.title}}
+            </h2>
+            <p>
+                {{new.post}}
+            </p>
+           
+        </div>
+    </div>
+
+    {% empty %}
+    <div class="row">
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+            <h2 class="tect-center">
+                There are no news for today.
+            </h2>
+        </div>
+    </div>
+    {% endfor %}
+        
+</div>
+{% endblock content %}
+    

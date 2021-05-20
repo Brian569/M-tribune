@@ -1,0 +1,25 @@
+{% extends 'all-news/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+    
+
+    <div class="container">
+        <div class="row">
+            <img src=" {{article.article_image.url}} " class="img-responsiveimage is-2by1 " style="height: 30vmin;" alt="Image" alt="">
+            
+        </div>
+        <div class="row">
+            
+            {% autoescape on %}
+            {{article.post|safe}} 
+            {% endautoescape %}
+            
+        </div>
+        <div class="row">
+            Posted {{article.pub_date|timesince}} by {{article.editor.first_name}} 
+        </div>
+    </div>
+{% endblock content %}
+    
